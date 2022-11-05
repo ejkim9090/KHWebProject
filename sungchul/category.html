@@ -1,74 +1,171 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>드롭다운 메뉴</title>
-    <link href="/sungchul/category.html" rel="stylesheet" />
-  </head>
 
-  <body>
-    <div id="container">
-      <ul class="myMenu">
-        <li class="menu">
-          <a href="#">영화</a>
-          <ul class="menu_s submenu">
-            <li><a href="#">영화</a></li>
-            <li><a href="#">무비차트</a></li>
-            <li><a href="#">아트하우스</a></li>
-            <li><a href="#">ICECON</a></li>
-          </ul>
-        </li>
-        <li class="menu">
-          <a href="#">극장</a>
-          <ul class="menu_s submenu">
-            <li><a href="#">극장</a></li>
-            <li><a href="#">CGV 극장</a></li>
-            <li><a href="#">특별관</a></li>
-          </ul>
-        </li>
-        <li class="menu">
-          <a href="#">예매</a>
-          <ul class="menu_s submenu">
-            <li><a href="#">빠른예매</a></li>
-            <li><a href="#">상영스케줄</a></li>
-            <li><a href="#">English Ticketing</a></li>
-            <li><a href="#">English Schedule</a></li>
-          </ul>
-        </li>
-        <li class="menu">
-          <a href="#">스토어</a>
-          <ul class="menu_s submenu">
-            <li><a href="#">스토어</a></li>
-            <li><a href="#">영화관람권</a></li>
-            <li><a href="#">기프트카드</a></li>
-            <li><a href="#">콤보</a></li>
-            <li><a href="#">팝콘</a></li>
-            <li><a href="#">음료</a></li>
-            <li><a href="#">스낵</a></li>
-            <li><a href="#">플레이존</a></li>
-            <li><a href="#">씨네샵</a></li>
-          </ul>
-        </li>
-        <li class="menu">
-          <a href="#">이벤트</a>
-          <ul class="menu_s submenu">
-            <li><a href="#">SPECIAL</a></li>
-            <li><a href="#">영화/예매</a></li>
-            <li><a href="#">멤버십/CLUB</a></li>
-            <li><a href="#">CGV 극장별</a></li>
-            <li><a href="#">제휴할인</a></li>
-            <li><a href="#">당첨자 발표</a></li>
-            <li><a href="#">종료된 이벤트</a></li>
-          </ul>
-        </li>
-        <li class="menu">
-          <a href="#">혜택</a>
-          <ul class="menu_s submenu">
-            <li><a href="#">CGV 할인정보</a></li>
-            <li><a href="#">CLUB 서비스</a></li>
-            <li><a href="#">VIP</a></li>
-          </ul>
-        </li>
-      </ul>
+<head>
+  <title>드롭다운 메뉴</title>
+  <style>
+    *{margin: 0 auto; padding: 0;}
+html, body, div, iframe, h1, h2, h3, h4, h5, h6, p, a, strong, dl, dt, dd, ol, ul, li, label {
+  font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+ol, ul {list-style:none;}
+
+dl:hover{
+  display: block;
+}
+body {line-height:1; color:black; }
+
+.nav{position:absolute; left:0; top:113px; width:100%; padding:5px 0; background-color:#fff}
+      .nav:after{content:''; display:block; position:absolute; left:0; top:49px; width:100%; height:2px; background-color:#fb4357}
+      .nav:before{content:''; display:block; position:absolute; left:0; bottom:0; width:100%; height:1px; background-color:#a58e8e}
+      .nav .contents{position:relative; }
+      .nav .contents h1{display:none}
+         .nav_menu{display:inline-flex; position: relative; z-index: 10; background:none;}
+         .nav_menu > li{ padding:20px 15px}
+         .nav_menu > li:first-child{width:137px;}
+         .nav_menu > li:first-child .nav_overMenu{padding-left:0}
+         .nav_menu > li:first-child .nav_overMenu:before{content:none}
+         .nav_menu > li:last-child{width:195px}
+         .nav_menu > li:nth-child(2) > h2{left:80px}
+         .nav_menu > li:nth-child(3) > h2{left:160px}
+         .nav_menu > li:nth-child(4) > h2{left:240px}
+         .nav_menu > li:nth-child(5) > h2{left:335px}
+         .nav_menu > li:last-child > h2{left:430px}
+
+         .nav_menu > li > h2{position:absolute; top:7px}
+         .nav_menu > li > h2 > a{display:block; font-weight:500; font-size:16px; color:#222; line-height:1.5em}
+      a{
+        text-decoration: none;
+      }
+         .nav_menu > li > h2 > a:hover{text-decoration:underline}
+         .nav_menu:hover dl.nav_overMenu{display:block;}
+      
+         .nav_menu > li > h2 > a strong{font-weight:700; color:#fb4357}
+            .nav_overMenu{display:none; position:relative; margin-bottom:8px; padding:25px 0 0 25px}
+            .nav_overMenu:before{content:''; position:absolute; left:0; top:45px; display:block; width:1px; height:250px; background-color:#eee; opacity:0.8}
+            .nav_overMenu h3{height:auto; margin:0; line-height:1em; text-align:left; background-image:none}
+            .nav_overMenu a:hover{text-decoration:underline}
+            .nav_overMenu dt{padding-top:18px}
+            .nav_overMenu dt a{font-weight:700; font-size:14px; color:#222; line-height:1.429em}
+            .nav_overMenu dt + dd{margin-top:8px}
+            .nav_overMenu dd a{font-weight:400; font-size:14px; color:#666; line-height:2.143em}
+            .nav_overMenu dd a:after{content:''; display:inline-flex; align-self:center; width:5px; height:9px; margin-left:4px; background:transparent url('./../images/common/ico/arrowR_5x9.png') center/5px 9px scroll no-repeat}
+
+         .totalSearch_wrap{display:inline-flex; position:absolute; right:0; top:7px; padding:0 36px 0 10px}
+         .totalSearch_wrap:before{content:''; position:absolute; left:0; top:2px; width:1px; height:20px; background-color:#cacaca}
+         .totalSearch_wrap:after{content:''; position:absolute; right:0; top:2px; width:1px; height:20px; background-color:#cacaca}
+         .totalSearch_wrap label{display:block}
+         .totalSearch_wrap label input[type="text"]{width:180px; height:auto; padding:0 0 0 7px; font-size:16px; color:#222; line-height:1.500em; border:none}
+         .totalSearch_wrap .btn_totalSearch{display:block; position:absolute; right:10px; top:-1px; ; width:26px; height:26px; font-size:0; line-height:0; background:transparent url('./../images/common/ico/search.png') center center/26px scroll no-repeat}
+
+         .totalSearch_wrap.active .totalSearchAutocomplete_wrap{display:block}
+      .nav.active .nav_overMenu{display:block}
+
+      .nav.fixed{position:fixed; top:0px; min-width:1040px; padding:10px 0}
+      .nav.fixed:after{top:0; bottom:auto; height:60px; background-image:linear-gradient(to right, rgb(215, 67, 87), rgb(241,79,58) 59%, rgb(239, 100, 47)); z-index:1}
+      .nav.fixed .contents{z-index:2}
+      .nav.fixed .contents h1{display:block; position:absolute; left:0; top:1px; width:70px; height:32px; z-index:3}
+      .nav.fixed .contents h1 a{display:block} 
+      .nav.fixed .contents h1 a img{width:100%; height:100%}
+      .nav.fixed .contents .nav_menu > li:first-child > h2{left:120px}
+      .nav.fixed .contents .nav_menu > li:nth-child(2) > h2{left:200px}
+      .nav.fixed .contents .nav_menu > li:nth-child(3) > h2{left:280px}
+      .nav.fixed .contents .nav_menu > li:nth-child(4) > h2{left:360px}
+      .nav.fixed .contents .nav_menu > li:nth-child(5) > h2{left:455px}
+      .nav.fixed .contents .nav_menu > li:last-child > h2{left:550px}
+      .nav.fixed .contents .nav_menu > li > h2 > a{color:#fff}
+      .nav.fixed .contents .nav_menu > li > h2 > a strong{color:#fff}
+      .nav.fixed .contents .totalSearch_wrap:before,
+      .nav.fixed .contents .totalSearch_wrap:after{background-color:#000; opacity:0.2}
+      .nav.fixed .contents .totalSearch_wrap label input[type="text"]{color:#fff; background-color:transparent}
+      .nav.fixed .contents .totalSearch_wrap .btn_totalSearch{background:transparent url('./../images/common/ico/search_w.png') center center/26px scroll no-repeat}
+      .nav.fixed .contents .totalSearchAutocomplete_wrap{position:absolute; left:0; top:49px}
+      
+  </style>
+</head>
+<body>
+  <div class="nav" style="left: 0px;">
+    <div class="contents">
+        <ul class="nav_menu">
+            <li>
+                <h2><a href="#">영화</a></h2>
+                <dl class="nav_overMenu">
+                    <dt><h2><a href="#" tabindex="-1">영화</a></h2></dt>
+                    <dd><h3><a href="#">무비차트</a></h3></dd>
+                    <dd><h3><a href="#">아트하우스</a></h3></dd>
+                    <dd><h3><a href="#">ICECON</a></h3></dd>
+                </dl>
+            </li>
+            <li>
+                <h2><a href="#">극장</a></h2>
+                <dl class="nav_overMenu">
+                    <dt><h2><a href="#" tabindex="-1">극장</a></h2></dt>
+                    <dd><h3><a href="#">CGV 극장</a></h3></dd>
+                    <dd><h3><a href="#">특별관</a></h3></dd>
+                </dl>
+            </li>
+            <li>
+                <h2><a href="#"><strong>예매</strong></a></h2>
+                <dl class="nav_overMenu">
+                    <dt><h2><a href="#" tabindex="-1">예매</a></h2></dt>
+                    <dd><h3><a href="#">빠른예매</a></h3></dd>
+                    <dd><h3><a href="#">상영스케줄</a></h3></dd>
+                    <dd><h3><a href="#">English Ticketing</a></h3></dd>
+                    <dd><h3><a href="#">English Schedule</a></h3></dd>
+                </dl>
+            </li>
+            <li>
+                <h2><a href="#">스토어</a></h2>
+                <dl class="nav_overMenu">
+                    <dt><h2><a href="#" tabindex="-1">스토어</a></h2></dt>
+                    
+                            <dd><h3><a href="#">영화관람권</a></h3></dd>
+                            <dd><h3><a href="#">기프트카드</a></h3></dd>                        
+                            <dd><h3><a href="#">콤보</a></h3></dd>
+                            <dd><h3><a href="#">팝콘</a></h3></dd>
+                            <dd><h3><a href="#">음료</a></h3></dd>
+                            <dd><h3><a href="#">스낵</a></h3></dd>
+                            <dd><h3><a href="#0">플레이존</a></h3></dd>
+                        
+                    <dd><h3><a href="#" class="arrowR" target="_blank">씨네샵</a></h3></dd>
+                </dl>
+            </li>
+            <li>
+                <h2 onclick="gaEventLog('PC_GNB','주메뉴_이벤트','')"><a href="#">이벤트</a></h2>
+                <dl class="nav_overMenu">
+                    <dt><h2><a href="#" tabindex="-1">이벤트</a></h2></dt>
+                    <dd><h3><a href="#">SPECIAL</a></h3></dd>
+                    <dd><h3><a href="#">영화/예매</a></h3></dd>
+                    <dd><h3><a href="#">멤버십/CLUB</a></h3></dd>
+                    <dd><h3><a href="#">CGV 극장별</a></h3></dd>
+                    <dd><h3><a href="#">제휴할인</a></h3></dd>
+                    <dd><h3><a href="#">당첨자 발표</a></h3></dd>
+                    <dd><h3><a href="#">종료된 이벤트</a></h3></dd>
+                </dl>
+            </li>
+            <li>
+                <h2 onclick="gaEventLog('PC_GNB','주메뉴_해택','')"><a href="#">혜택</a></h2>
+                <dl class="nav_overMenu">
+                    <dt><h2><a href="#" tabindex="-1">혜택</a></h2></dt>
+                    <dd><h3><a href="#">CGV 할인정보</a></h3></dd>
+                    <dd><h3><a href="#">CLUB 서비스</a></h3></dd>
+                    <dd><h3><a href="#">VIP 라운지</a></h3></dd>
+                </dl>
+            </li>
+        </ul>
+        <div class="totalSearch_wrap active">
+            <label for="totalSearch">
+                <input type="text" id="header_keyword" value="" placeholder="">
+                <input type="hidden" id="header_ad_keyword" name="header_ad_keyword" value="">
+            </label>
+            <button type="button" class="btn_totalSearch" id="btn_header_search">버튼</button>
+           
+        </div>
     </div>
-  </body>
+</div>
+</body>
 </html>
