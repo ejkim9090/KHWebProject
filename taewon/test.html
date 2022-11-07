@@ -5,6 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="./script/includeHTML.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div include-html="head.html">
+      <script>
+        includeHTML();
+      </script>
+    </div>
+    <div include-html="category.html">
+      <script>
+        includeHTML();
+      </script>
+    </div>
+    <div style="height: 300px"></div>
+    <div include-html="sjh.html">
+      <script>
+        includeHTML();
+      </script>
+    </div>
+    <div include-html="footer.html">
+      <script>
+        includeHTML();
+      </script>
+    </div>
+  </body>
 </html>
