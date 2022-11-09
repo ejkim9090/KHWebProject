@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/webcontent.css" type="text/css" />
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <script type="text/javascript" src="script/test1.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".specialHall_list a").on({
+          mouseenter: function (e) {
+            var target = e.target;
+            var idx = $(target).closest("li").index();
+
+            var arrimgUrl = [
+              "https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png",
+              "https://img.cgv.co.kr//Front/Main/2022/0616/16553622935690.png",
+              "https://img.cgv.co.kr//Front/Main/2021/1130/16382612660240.png",
+              "https://img.cgv.co.kr//Front/Main/2021/1130/16382612660560.png",
+            ];
+
+            $(target)
+              .closest("li")
+              .addClass("active")
+              .siblings("li")
+              .removeClass("active");
+            $(".specialHall_link").attr("href", target.href); // 링크 주소 넣을 곳
+            $(".specialHall_link img").attr("src", arrimgUrl[idx]);
+            $(".specialHall_link img").attr(
+              "alt",
+              $(target).children("strong").text()
+            );
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="specialHall_wrap">
+      <div class="specialHall_title_wrap" style="display: flex">
+        <h3>특별관</h3>
+        <a href="index.html">전체보기</a>
+      </div>
+      <div class="specialHall_content">
+        <a href="index.html" class="specialHall_link">
+          <div class="img_wrap" data-scale="false">
+            <img
+              src="https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png"
+              alt="SUITE CINEMA"
+            />
+          </div>
+        </a>
+        <ul class="specialHall_list">
+          <li class="active">
+            <a href="index.html">
+              <strong>SUITE CINEMA</strong>
+              <div class="specialHall_hashTag_wrap">
+                <span class="spcialHall_hashTag">
+                  #호텔 컨셉의 프리미엄 컨셉관
+                </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <strong>CINE & LIVINGROOM</strong>
+              <div class="specialHall_hashTag_wrap">
+                <span class="spcialHall_hashTag"> #신개념 소셜 상영관 </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <strong>4DX</strong>
+              <div class="specialHall_hashTag_wrap">
+                <span class="spcialHall_hashTag"> #모션시트 #오감체험 </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <strong>CINE de CHEF</strong>
+              <div class="specialHall_hashTag_wrap">
+                <span class="spcialHall_hashTag"> #쉐프가 있는 영화관 </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
