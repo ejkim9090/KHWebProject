@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/webcontent.css" type="text/css" />
+    <link rel="stylesheet" href="css/webcontent.css" />
     <link rel="stylesheet" href="css/reset.css" type="text/css" />
-    <script type="text/javascript" src="script/test1.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function () {
@@ -40,56 +40,67 @@
     </script>
   </head>
   <body>
-    <div class="specialHall_wrap">
-      <div class="specialHall_title_wrap" style="display: flex">
-        <h3>특별관</h3>
-        <a href="index.html">전체보기</a>
-      </div>
-      <div class="specialHall_content">
-        <a href="index.html" class="specialHall_link">
-          <div class="img_wrap" data-scale="false">
-            <img
-              src="https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png"
-              alt="SUITE CINEMA"
-            />
+    <div id="contaniner" class="">
+      <div class="specialHall_wrap">
+        <div class="contents">
+          <div class="specialHall_title_wrap">
+            <h3>특별관</h3>
+            <a href="index.html">전체보기</a>
           </div>
-        </a>
-        <ul class="specialHall_list">
-          <li class="active">
-            <a href="index.html">
-              <strong>SUITE CINEMA</strong>
-              <div class="specialHall_hashTag_wrap">
-                <span class="spcialHall_hashTag">
-                  #호텔 컨셉의 프리미엄 컨셉관
-                </span>
+          <div class="specialHall_content">
+            <a href="index.html" class="specialHall_link">
+              <div class="img_wrap" data-scale="false">
+                <img
+                  src="https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png"
+                  alt="SUITE CINEMA"
+                  id="imgtag"
+                />
               </div>
             </a>
-          </li>
-          <li>
-            <a href="index.html">
-              <strong>CINE & LIVINGROOM</strong>
-              <div class="specialHall_hashTag_wrap">
-                <span class="spcialHall_hashTag"> #신개념 소셜 상영관 </span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="index.html">
-              <strong>4DX</strong>
-              <div class="specialHall_hashTag_wrap">
-                <span class="spcialHall_hashTag"> #모션시트 #오감체험 </span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="index.html">
-              <strong>CINE de CHEF</strong>
-              <div class="specialHall_hashTag_wrap">
-                <span class="spcialHall_hashTag"> #쉐프가 있는 영화관 </span>
-              </div>
-            </a>
-          </li>
-        </ul>
+            <ul class="specialHall_list">
+              <li class="active">
+                <a href="index.html">
+                  <strong>SUITE CINEMA</strong>
+                  <div class="specialHall_hashTag_wrap">
+                    <span class="spcialHall_hashTag">
+                      #호텔 컨셉의 프리미엄 컨셉관
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  <strong>CINE & LIVINGROOM</strong>
+                  <div class="specialHall_hashTag_wrap">
+                    <span class="spcialHall_hashTag">
+                      #신개념 소셜 상영관
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  <strong>4DX</strong>
+                  <div class="specialHall_hashTag_wrap">
+                    <span class="spcialHall_hashTag">
+                      #모션시트 #오감체험
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  <strong>CINE de CHEF</strong>
+                  <div class="specialHall_hashTag_wrap">
+                    <span class="spcialHall_hashTag">
+                      #쉐프가 있는 영화관
+                    </span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </body>
