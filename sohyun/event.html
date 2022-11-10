@@ -18,7 +18,7 @@
             padding: 60px 0 6px;
             float: left;
             overflow: hidden;
-            margin:0 auto;
+            margin: 0 auto;
         }
 
         .event_title_wrap h3 {
@@ -30,6 +30,25 @@
             color: #222;
             line-height: 1.423em;
             background-image: none;
+        }
+
+        .btn_allView {
+            float: right;
+            margin-top: 4px;
+            padding: 4px 32px 4px 15px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #222;
+            line-height: 1.429em;
+            background: transparent url(https://img.cgv.co.kr/R2014/images/common/ico/arrowR_8x13.png) calc(100% - 7px) center/8px 13px scroll no-repeat;
+            border: 1px solid #e2e2e2;
+            border-radius: 15px;
+            box-shadow: 1px 1px 1px 0 rgb(0 0 0 / 5%);
+        }
+
+        .btn_allView:active{
+            position: relative;
+           border: 3px solid #e2e2e2;
         }
 
         .event_image_wrap {
@@ -78,7 +97,7 @@
 <body>
     <div class="event_wrap">
         <div class="event_title_wrap">
-            <h3>EVENT</h3>
+            <h3>EVENT</h3><a href=# class="btn_allView">전체보기</a>
         </div>
         <br><br><br>
         <div class="event_image_wrap">
