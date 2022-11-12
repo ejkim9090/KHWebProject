@@ -8,8 +8,35 @@
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+        #contaniner .contents {
+            width: 980px;
+            height: 100%;
+            margin: 0 auto;
+        }
 
+        div {
+            display: block;
+        }
 
+        .swiper-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            transition-property: transform;
+            box-sizing: content-box;
+        }
+
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+            list-style: none;
+            padding: 0;
+            z-index: 1;
+        }
 
         .event_wrap {
             font-family: 'Noto Sans KR';
@@ -45,18 +72,18 @@
             border-radius: 15px;
             box-shadow: 1px 1px 1px 0 rgb(0 0 0 / 5%);
         }
-
         .btn_allView:active{
             position: relative;
            border: 3px solid #e2e2e2;
         }
 
-        .event_image_wrap {
+        .event_list_wrap {
             overflow: hidden;
             float: left;
             padding-right: 15px;
             text-align: left;
             line-height: 30px;
+            content: '';
         }
 
         .event_image_wrap img {
@@ -65,63 +92,110 @@
             border-radius: 4%;
             object-fit: cover;
             transition: all 0.2s linear;
+
         }
 
-        .event_image_wrap:hover img {
-            transform: scale(1.1);
+        .img_wrap:hover>img {
+            transform: scale(1.1) translate(0, -45%);
+            transition: all 0.5s;
         }
 
-        .event_text_wrap {
+        a .img_wrap {
+            overflow: hidden;
+            width: 310px;
+            height: 207px;
+            border-radius: 10px;
+        }
+
+        .swiper-slide {
+            padding-right: 25px;
+            padding-top: 15px;
+        }
+
+        .img_wrap {
+            position: relative;
+        }
+
+        .img_wrap>img {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(0, -50%);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .swiper-slide a strong {
+            display: block;
+            overflow: hidden;
+            margin-top: 16px;
+            font-weight: 800;
             font-size: 18px;
-        }
-
-        .event_text_wrap span {
-            padding-right: 45px;
-            margin-top: 16px;
             color: #222;
+            line-height: 1.444em;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-decoration: none;
         }
 
-        .event_datetext_wrap {
+        .swiper-slide a span {
+            display: block;
             margin-top: 4px;
-        }
-
-        .event_text_wrap span#date {
-            margin-top: 16px;
-            padding-right: 160px;
             font-size: 14px;
             color: #666;
+            line-height: 1.429em;
+            text-decoration: none;
         }
     </style>
 </head>
 
 <body>
-    <div class="event_wrap">
-        <div class="event_title_wrap">
-            <h3>EVENT</h3><a href=# class="btn_allView">전체보기</a>
-        </div>
-        <br><br><br>
-        <div class="event_image_wrap">
-            <div class="event_image_wrap">
-                <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35437/16649460074130.jpg"
-                    alt="CGV X TVING 월 정기혜택">
+    <div id="ctl00_PlaceHolderContent_event_wrap" class="event_wrap">
+        <div class="contents">
+            <div class="event_title_wrap">
+                <h3>EVENT</h3>
+                <a href=# id="btn_allView_Event" class="btn_allView">전체보기</a>
             </div>
-            <div class="event_text_wrap">
-                <strong>CGV x TVING 월 정기 혜택 [CGV PLUS]</strong>
-            </div>
-            <div class="event_datetext_wrap">
-                <span class="event_date">2022.10.26~2032.10.06</span>
-            </div>
-        </div>
-        <div class="event_image_wrap">
-            <div class="event_image_wrap">
-                <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35691/16673651144220.jpeg"
-                    alt="[블랙팬서: 와칸다 포에버] 필름마크">
-            </div>
-            <div class="event_text_wrap">
-                <strong>[블랙팬서: 와칸다 포에버] 필름마크</strong>
-            </div>
-            <div class="event_datetext_wrap">
-                <span class="event_date">2022.11.02~2022.11.27</span>
+            <div class="event_list_wrap">
+                <div class="swiper event_list">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <a href=#>
+                                <div class="img_wrap"><img
+                                        src="https://img.cgv.co.kr/WebApp/contents/eventV4/35437/16649460074130.jpg"
+                                        alt="CGV x TVING 월 정기 혜택 [CGV PLUS]"></div>
+                                <strong>CGV x TVING 월 정기 혜택 [CGV PLUS]</strong>
+                                <span>2022.10.06~2032.10.06</span>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href=#>
+                                <div class="img_wrap"><img
+                                        src="https://img.cgv.co.kr/WebApp/contents/eventV4/35691/16673651144220.jpeg"
+                                        alt="[블랙 팬서: 와칸다 포에버]필름마크"></div>
+                                <strong>[블랙 팬서: 와칸다 포에버]필름마크</strong>
+                                <span>2022.11.02~2022.11.27</span>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href=#>
+                                <div class="img_wrap"><img
+                                        src="https://img.cgv.co.kr/WebApp/contents/eventV4/35690/16674410779650.jpg"
+                                        alt="[블랙팬서:와칸다 포에버]SX 리미티드 포스터"></div>
+                                <strong>[블랙팬서:와칸다 포에버]SX 리미티드 포스터</strong>
+                                <span>2022.11.02~2022.11.15</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
