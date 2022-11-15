@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.1.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        div {
+            font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+            font-size: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            word-break: break-all;
+        }
+
+        #Content_Section_Trailer {
+            width: 820px;
+            height: 300.98px;
+        }
+
+        #Content_Section_Still_Cut {
+            width: 800px;
+            height: 549px;
+
+        }
+
+        /* 회색 헤딩 메뉴 */
+        .heading {
+            position: relative;
+            width: 100%;
+            height: 39px;
+            background: #f6f6f6
+        }
+
+        .heading h4 {
+            float: left;
+            margin: 0px 16px;
+            line-height: 39px;
+            color: #333333;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: -1px;
+        }
+
+        .heading .count {
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: 300;
+            line-height: 40px;
+        }
+
+        /* 트레일러 */
+        .sect-trailer ul {
+            margin-left: -10px;
+            padding: 10px;
+        }
+
+        .sect-trailer li {
+            width: 260px;
+            margin: 0 0 15px 10px;
+            list-style: none;
+            float: left;
+        }
+
+
+        .sect-trailer li .thumb-image img {
+            width: 260px;
+            height: 142px;
+        }
+
+        #first_img {
+            padding-left: -10px;
+        }
+
+
+        .sect-trailer .title {
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+
+        .sect-trailer .txt-info {
+            margin-top: 3px;
+            color: #666666;
+        }
+        
+        .movie_player_popup {
+            text-decoration: none;
+        }
+
+        .link-more {
+            display: inline-block;
+            width: 20px;
+            height: 19px;
+            background: url(https://img.cgv.co.kr/R2014/images/sprite/sprite_btn.png) -50px -62px no-repeat;
+            vertical-align: middle;
+            font: 0/0 a;
+            zoom: 1;
+        }
+
+        .ico-trailer.hd {
+            border-color: #2a6fb6;
+            color: #2a6fb6;
+        }
+
+        .ico-trailer {
+            display: inline-block;
+            height: 13px;
+            margin-right: 5px;
+            padding: 0 3px;
+            border: 1px solid #c62424;
+            font-size: 10px;
+            font-family: Dotum, '돋움';
+            text-align: center;
+            font-weight: bold;
+            line-height: 13px;
+        }
+
+        .ico-play {
+            position: absolute;
+            right: 5px;
+            bottom: 6px;
+            width: 44px;
+            height: 44px;
+            background: url(https://img.cgv.co.kr/R2014/images/sprite/sprite_icon.png) -60px -21px no-repeat;
+            font: 0/0 a;
+            zoom: 1;
+        }
+
+        strong {
+            font-weight: 500;
+        }
+
+        .title {
+            display: block;
+            color: #333333;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .txt-info {
+            display: block;
+            color: #999999;
+            font-size: 12px;
+        }
+
+        .controller button {
+            position: absolute;
+            background-color: transparent;
+            color: black;
+            text-align: center;
+            border-radius: 50%;
+            padding: 10px 20px;
+            top: 50%;
+            font-size: 1.3em;
+            cursor: pointer;
+        }
+
+        /* 스틸컷 */
+        li {
+            list-style-type: none;
+        }
+
+        #slideShow {
+            width: 505px;
+            height: 460px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides img {
+            width: 316px;
+            height: 450px;
+        }
+
+        .slides {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2500px;
+        }
+
+        .slides li {
+            margin-left: 160px;
+        }
+
+        .slides li {
+            float: left;
+        }
+
+        .controller span {
+            position: absolute;
+            background-color: transparent;
+            color: black;
+            text-align: center;
+            padding: 10px 20px;
+            top: 50%;
+            font-size: 1.3em;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 30px;
+        }
+
+        .next {
+            right: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="Content_Section_Trailer" class="sect-trailer">
+        <div class="heading">
+            <h4>트레일러</h4><span id="Content_TrailerTotalCount" class="count">3건</span><a class="link-more" href=#>더보기</a>
+        </div>
+        <ul>
+            <li>
+                <div class="box-image">
+                    <a href="#" class="movie_player_popup" data-gallery-idx="207699">
+                        <span class="thumb-image">
+                            <img id="first_img"
+                                src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86119/86119207699_1024.jpg"
+                                alt="[블랙 팬서-와칸다 포에버]&#39;영원한 히어로&#39; 영상" />
+                            <span class="ico-play">영상보기</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="box-contents">
+                    <a href="#" class="movie_player_popup" data-gallery-idx="207699">
+                        <strong class="title">
+
+                            <span class="ico-trailer hd">HD</span>
+                            &#39;영원한 히어로&#39; 영상
+                        </strong>
+                    </a>
+                    <span class="txt-info">2022.10.21</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="box-image">
+                    <a href="#" class="movie_player_popup" data-gallery-idx="207236">
+                        <span class="thumb-image">
+                            <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86119/86119207236_1024.jpg"
+                                alt="[블랙 팬서-와칸다 포에버]메인 예고편" />
+                            <span class="ico-play">영상보기</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="box-contents">
+                    <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="207236">
+                        <strong class="title">
+
+                            <span class="ico-trailer hd">HD</span>
+                            메인 예고편
+                        </strong>
+                    </a>
+                    <span class="txt-info">2022.10.06</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="box-image">
+                    <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205278">
+                        <span class="thumb-image">
+                            <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86119/86119205278_1024.jpg"
+                                alt="[블랙 팬서-와칸다 포에버]티저 예고편" />
+                            <span class="ico-play">영상보기</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="box-contents">
+                    <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205278">
+                        <strong class="title">
+
+                            <span class="ico-trailer hd">HD</span>
+                            티저 예고편
+                        </strong>
+                    </a>
+                    <span class="txt-info">2022.08.02</span>
+                </div>
+            </li>
+
+        </ul>
+
+
+    </div>
+    <div id="Content_Section_Still_Cut" class="sect-stillcut">
+        <div class="heading">
+            <h4>스틸컷</h4><span class="count"><strong id="stillcut_current">1</strong>/22건</span><a class="link-more"
+                href="still-cut.aspx?midx=86119">더보기</a>
+        </div>
+        <div id="slideShow">
+            <ul class="slides">
+                <li><img src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86119/86119207598_727.jpg" alt="">
+                </li>
+                <li><img src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86119/86119207603_727.jpg" alt="">
+                </li>
+                <li><img src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86119/86119207599_727.jpg" alt="">
+                </li>
+            </ul>
+            <p class="controller">
+                <span class="prev">&lang;</span>
+                <span class="next">&rang;</span>
+            </p>
+        </div>
+    </div>
+    <script>
+        const slides = document.querySelector('.slides'); 
+        const slideImg = document.querySelectorAll('.slides li'); 
+        let currentIdx = 0; 
+        const slideCount = slideImg.length; 
+        const prev = document.querySelector('.prev'); 
+        const next = document.querySelector('.next'); 
+        const slideWidth = 316; 
+        const slideMargin = 450; 
+
+        slides.style.width = (slideWidth + slideMargin) * slideCount + 'px';
+
+        function moveSlide(num) {
+            slides.style.left = -num * 550 + 'px';
+            currentIdx = num;
+        }
+
+        prev.addEventListener('click', function () {
+            if (currentIdx !== 0) moveSlide(currentIdx - 1);
+        });
+
+        next.addEventListener('click', function () {
+            if (currentIdx !== slideCount - 1) {
+                moveSlide(currentIdx + 1);
+            }
+        });
+    </script>
+</body>
+
+</html>
