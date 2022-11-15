@@ -10,7 +10,6 @@
       #container .row {
         width: 1196px;
         margin: 0 auto;
-        background-color: aliceblue;
       }
       #container .row .fl-box {
         display: flex;
@@ -19,20 +18,34 @@
         margin: 40px 0 40px 0;
         font-size: xx-large;
       }
+      #container .row .fl-box > hr {
+        margin: 40px 0 40px 0;
+      }
       #container .row .empty-box {
         flex: 1;
         /* 위의 옵션을 사용해서  가운데에 빈공간 만든다.*/
-        background-color: antiquewhite;
       }
-      #container .row .egg-box {
-        display: block;
+      #container .row .fl-box .egg-box {
+        display: flex;
+        margin: auto 20px auto 20px;
+      }
+      #container .row .egg-box .block-egg-box {
         margin: auto 20px auto 20px;
         text-align: center;
       }
-      #container .row .egg-box > h2 {
+      #container .row .egg-box .block-egg-box > h2 {
+        font-size: large;
         color: orangered;
       }
+      #container .row .egg-box .block-egg-box > h3 {
+        font-size: xx-large;
+      }
+      #container .row .ch-box {
+        width: 400px;
+      }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+    <!-- <script src="./script/chart.js"></script> -->
   </head>
   <body>
     <div id="container">
@@ -44,16 +57,57 @@
           </h1>
           <div class="empty-box"></div>
           <div class="egg-box">
-            <p>preegg</p>
-            <h1>99%</h1>
+            <img src="./images/egg.jpeg" alt="" />
+            <div class="block-egg-box">
+              <h2>preegg</h2>
+              <h3>99%</h3>
+            </div>
           </div>
           <hr />
           <div class="egg-box">
-            <h2>preegg</h2>
-            <h3>99%</h3>
+            <img src="./images/egg.jpeg" alt="" />
+            <div class="block-egg-box">
+              <h2>preegg</h2>
+              <h3>99%</h3>
+            </div>
           </div>
+        </div>
+        <div class="ch-box">
+          <canvas id="radar-chart" width="300px" height="300px"> </canvas>
         </div>
       </div>
     </div>
+    <script>
+      new Chart(document.getElementById("radar-chart"), {
+        type: "radar",
+        data: {
+          labels: ["감독연출", "스토리", "영상미", "배우연기", "OST"],
+          datasets: [
+            {
+              label: "매력포인트",
+              fill: true,
+              backgroundColor: "rgba(179,181,198,0.2)",
+              borderColor: "rgba(179,181,198,1)",
+              pointBorderColor: "#fff",
+              pointBackgroundColor: "rgba(179,181,198,1)",
+              data: [8.77, 55.61, 21.69, 6.62, 6.82],
+            },
+          ],
+        },
+        options: {
+          scales: {
+            r: {
+              pointLabels: {
+                color: "green",
+                font: {
+                  size: 20,
+                  style: "italic",
+                },
+              },
+            },
+          },
+        },
+      });
+    </script>
   </body>
 </html>
