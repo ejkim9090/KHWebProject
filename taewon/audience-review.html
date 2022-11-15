@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+      #container .row {
+        width: 1196px;
+        margin: 0 auto;
+        background-color: aliceblue;
+      }
+      #container .row .fl-box {
+        display: flex;
+      }
+      #container .row .fl-box > h1 {
+        margin: 40px 0 40px 0;
+        font-size: xx-large;
+      }
+      #container .row .empty-box {
+        flex: 1;
+        /* 위의 옵션을 사용해서  가운데에 빈공간 만든다.*/
+        background-color: antiquewhite;
+      }
+      #container .row .egg-box {
+        display: block;
+        margin: auto 20px auto 20px;
+        text-align: center;
+      }
+      #container .row .egg-box > h2 {
+        color: orangered;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="row">
+        <div class="fl-box">
+          <h1>
+            영상미가 빛난<br />
+            몰입하여 보게 되는 영화
+          </h1>
+          <div class="empty-box"></div>
+          <div class="egg-box">
+            <p>preegg</p>
+            <h1>99%</h1>
+          </div>
+          <hr />
+          <div class="egg-box">
+            <h2>preegg</h2>
+            <h3>99%</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
