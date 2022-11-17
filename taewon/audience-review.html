@@ -8,15 +8,21 @@
     <link rel="stylesheet" href="css/reset.css" />
     <style>
       #container .row {
-        width: 1196px;
+        width: 800px;
         margin: 0 auto;
+      }
+      #container .row > hr {
+        width: 800px;
+        border: black solid 2px;
       }
       #container .row .fl-box {
         display: flex;
+        margin-left: 20px;
       }
       #container .row .fl-box > h1 {
         margin: 40px 0 40px 0;
-        font-size: xx-large;
+        font-size: 24px;
+        font-weight: 600;
       }
       #container .row .fl-box > hr {
         margin: 40px 0 40px 0;
@@ -29,8 +35,11 @@
         display: flex;
         margin: auto 20px auto 20px;
       }
+      #container .row .fl-box .egg-box img {
+        width: 70px;
+      }
       #container .row .egg-box .block-egg-box {
-        margin: auto 20px auto 20px;
+        margin: auto 0px auto 10px;
         text-align: center;
       }
       #container .row .egg-box .block-egg-box > h2 {
@@ -40,8 +49,85 @@
       #container .row .egg-box .block-egg-box > h3 {
         font-size: xx-large;
       }
-      #container .row .ch-box {
+      #container .row .ch-fl-box {
+        display: flex;
+      }
+      #container .row .ch-box-wrap:first-child {
         width: 400px;
+        height: 320px;
+        margin: auto;
+        border: #bbbbbb solid 2px;
+        padding: 30px 50px 30px 50px;
+      }
+      #container .row .ch-box-wrap:last-child {
+        width: 400px;
+        height: 320px;
+        margin: auto;
+        border-right: #bbbbbb solid 2px;
+        border-top: #bbbbbb solid 2px;
+        border-bottom: #bbbbbb solid 2px;
+        padding: 30px 50px 30px 50px;
+      }
+      #container .row .ch-box {
+        width: 300px;
+        height: 200px;
+        margin: auto;
+      }
+      #container .row .ch-fl-box h1 {
+        display: flex;
+        font-size: 20px;
+      }
+      #container .row .announce-box-wrap {
+        margin: 20px 0 20px 0;
+        background-color: #f6f6f6;
+      }
+      #container .row .announce-box-wrap .announce-box {
+        display: flex;
+        height: 110px;
+        align-items: center;
+        padding-left: 50px;
+      }
+      #container .row .announce-box-wrap .announce-box .text-box {
+        margin: auto 0 auto 0;
+      }
+      #container .row .announce-box-wrap .announce-box .text-box > h1 {
+        font-size: 17px;
+        margin-bottom: 10px;
+      }
+      #container .row .announce-box-wrap .announce-box .text-box > h2 {
+        font-size: 13px;
+        font-weight: normal;
+      }
+      #container .row .announce-box-wrap .announce-box .button-box {
+        margin: 40px;
+      }
+      #container
+        .row
+        .announce-box-wrap
+        .announce-box
+        .button-box
+        > .red-white {
+        background-color: #fb4357;
+        border: red solid 1px;
+        color: white;
+        width: 75px;
+        height: 50px;
+        border-radius: 5px;
+      }
+      #container
+        .row
+        .announce-box-wrap
+        .announce-box
+        .button-box
+        > .gray-white {
+        background-color: #646464;
+        border: #646464 solid 1px;
+        color: white;
+        width: 75px;
+        height: 50px;
+        border-radius: 5px;
+      }
+      #container .row .audience-review-wrap {
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
@@ -50,6 +136,7 @@
   <body>
     <div id="container">
       <div class="row">
+        <hr />
         <div class="fl-box">
           <h1>
             영상미가 빛난<br />
@@ -72,8 +159,38 @@
             </div>
           </div>
         </div>
-        <div class="ch-box">
-          <canvas id="radar-chart" width="300px" height="300px"> </canvas>
+        <div class="ch-fl-box">
+          <div class="ch-box-wrap">
+            <div class="ch-box">
+              <h1>매력 포인트</h1>
+              <canvas id="radar-chart" width="300px" height="300px"> </canvas>
+            </div>
+          </div>
+          <div class="ch-box-wrap">
+            <div class="ch-box">
+              <h1>감정 포인트</h1>
+              <canvas id="radar1-chart" width="300px" height="300px"> </canvas>
+            </div>
+          </div>
+        </div>
+        <div class="announce-box-wrap">
+          <div class="announce-box">
+            <div class="text-box">
+              <h1>
+                관람일 포함 7일 이내 관람평을 남기시면 CJ ONE 20P가 적립됩니다.
+              </h1>
+              <h2>727 명의 실관람객이 평가해주셨습니다.</h2>
+            </div>
+            <div class="empty-box"></div>
+            <div class="button-box">
+              <button class="red-white">평점작성</button>
+              <button class="gray-white">평점작성</button>
+            </div>
+          </div>
+        </div>
+        <div class="audience-review-wrap">
+          <div class="sort-review"></div>
+          <div class="audience-review"></div>
         </div>
       </div>
     </div>
@@ -86,23 +203,75 @@
             {
               label: "매력포인트",
               fill: true,
-              backgroundColor: "rgba(179,181,198,0.2)",
-              borderColor: "rgba(179,181,198,1)",
-              pointBorderColor: "#fff",
-              pointBackgroundColor: "rgba(179,181,198,1)",
-              data: [8.77, 55.61, 21.69, 6.62, 6.82],
+              backgroundColor: "rgba(255,244,238,0.5)",
+              borderColor: "rgba(251,140,67,1)",
+              pointBorderColor: "#ff85b3",
+              pointBackgroundColor: "rgba(255,133,179,1)",
+              data: [57, 80, 60, 97, 65],
             },
           ],
         },
         options: {
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
           scales: {
             r: {
               pointLabels: {
-                color: "green",
+                color: "black",
                 font: {
-                  size: 20,
-                  style: "italic",
+                  size: "17px",
                 },
+              },
+              ticks: {
+                beginAtZero: true,
+                min: 30,
+                max: 120,
+                stepSize: 30,
+                showLabelBackdrop: false,
+              },
+            },
+          },
+        },
+      });
+      new Chart(document.getElementById("radar1-chart"), {
+        type: "radar",
+        data: {
+          labels: ["설렘", "유쾌함", "공감", "몰입감", "감동"],
+          datasets: [
+            {
+              label: "매력포인트",
+              fill: true,
+              backgroundColor: "rgba(255,238,239,0.7)",
+              borderColor: "rgba(251,67,87,1)",
+              pointBorderColor: "#ff85b3",
+              pointBackgroundColor: "rgba(255,133,179,1)",
+              data: [57, 80, 60, 97, 65],
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            r: {
+              pointLabels: {
+                color: "black",
+                font: {
+                  size: "17px",
+                },
+              },
+              ticks: {
+                beginAtZero: true,
+                min: 30,
+                max: 120,
+                stepSize: 30,
+                showLabelBackdrop: false,
               },
             },
           },
