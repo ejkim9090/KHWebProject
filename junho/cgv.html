@@ -25,15 +25,16 @@
     
     <script>
 $(function(){
-    // var jh = $(this);
-    $("#nop_group_adult").click(function () {
+    var jh = $(this);
+    jh.click(function () {
         console.log("여기1");
         console.log(jh);
-        if (hasClass('title')) {
+        if (jh.hasClass('selected')) {
             console.log("여기2");
-            jh.removeClass('selected')
+            // jh.removeClass('selected') // 있으면 지우고
         } else {
-            jh.addClass('selected');
+            console.log("여기3");
+            // $(".kh").addClass('selected'); // 없으면 추가하고
         }
     });
 });
@@ -83,40 +84,40 @@ $(function(){
 
                                                 <div class="group adult" id="nop_group_adult" style="display: block;">
                                                     <span class="title">일반</span>
-                                                    <ul class="num1">
-                                                        <li data-count="0" class="nonselected" type="adult"><a href="#"
+                                                    <ul class="kh">
+                                                        <li data-count="0" class="num0" type="adult"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>0<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="1" type="adult" class="nonselected"><a href="#"
+                                                        <li data-count="1" type="adult" class="num1"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>1<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="2" type="adult" class="selected"><a href="#"
+                                                        <li data-count="2" type="adult" class="num2 selected"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>2<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="3" type="adult" class="nonselected"><a href="#"
+                                                        <li data-count="3" type="adult" class="num3"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>3<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="4" type="adult" class="nonselected"><a href="#"
+                                                        <li data-count="4" type="adult" class="num4"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>4<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="5" type="adult" class="nonselected"><a href="#"
+                                                        <li data-count="5" type="adult" class="num5"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>5<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="6" type="adult" class="nonselected"><a href="#"
+                                                        <li data-count="6" type="adult" class="num6"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>6<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="7" type="adult" class="nonselected"><a href="#"
+                                                        <li data-count="7" type="adult" class="num7"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>7<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="8" type="adult" class="nonselected"><a href="#"
+                                                        <li data-count="8" type="adult" class="num8"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>8<span
                                                                     class="sreader">명</span></a></li>
