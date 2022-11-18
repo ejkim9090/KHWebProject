@@ -368,6 +368,11 @@ body {
     background-color: #52AE35;
     font-size: 11px;
 }
+.movie-list {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: left;
+}
 
 .movie-list-title {
     padding: 6px 4px;
