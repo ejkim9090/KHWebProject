@@ -6,6 +6,41 @@ body {
     background-color: #FDFCF0;
 }
 
+/* ticket button */
+#ticket .btn_chart {
+    background-position: 0 -90px;
+    position: relative;
+    display: block;
+    top: 160px;
+    left: 965px;
+    margin-right: 5px;
+    width: 101px;
+    height: 30px;
+    overflow: hidden;
+    background-image: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/top_buttons.png);
+    background-repeat: no-repeat;
+    background-position: 0% 37.5%;
+}
+
+#ticket .btn_restart {
+    background-position: 0 -90px;
+    width: 113px;
+    height: 30px;
+    top: 130px;
+    left: 1070px;
+    position: relative;
+    display: block;
+    /* float: right; */
+    margin-left: 5px;
+    overflow: hidden;
+    background-image: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/top_buttons.png);
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+}
+#ticket{
+position: relative;
+}
+
 
 /* header */
 
