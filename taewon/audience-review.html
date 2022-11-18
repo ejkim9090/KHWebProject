@@ -127,7 +127,16 @@
         height: 50px;
         border-radius: 5px;
       }
-      #container .row .audience-review-wrap {
+      #container .row .audience-review-wrap .sort-review {
+        display: flex;
+      }
+      #container .row .audience-review-wrap .sort-review > hr {
+        margin: 0 10px 0 10px;
+        color: #646464;
+      }
+      #container .row .audience-review-wrap .sort-review > a {
+        font-size: 13px;
+        font-weight: 500;
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
@@ -189,7 +198,11 @@
           </div>
         </div>
         <div class="audience-review-wrap">
-          <div class="sort-review"></div>
+          <div class="sort-review">
+            <a href="#">최신순</a>
+            <hr />
+            <a href="#">추천순</a>
+          </div>
           <div class="audience-review"></div>
         </div>
       </div>
