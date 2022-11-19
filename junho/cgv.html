@@ -24,24 +24,47 @@
         src="http://img.cgv.co.kr/CGV_RIA/Ticket/Common/js/2022/1101.FAVORITE_CGV/1000/reservation.step2.js"></script>
     
     <script>
-$(function(){
-    var jh = $(this);
-    jh.click(function () {
-        console.log("여기1");
-        console.log(jh);
-        if (jh.hasClass('selected')) {
-            console.log("여기2");
-            // jh.removeClass('selected') // 있으면 지우고
-        } else {
-            console.log("여기3");
-            // $(".kh").addClass('selected'); // 없으면 추가하고
-        }
-    });
-});
+        $(function(){
+            
+            $("[data-count]").click(function () {
+                console.log("여기1");
+                console.log(this);
+                if ($(this).hasClass('selected')) {
+                    console.log("여기2");
+                    $(this).removeClass('selected') // 있으면 지우고
+                } else {
+                    console.log("여기3");
+                    $(this).addClass('selected'); // 없으면 추가하고
+                    // console.log("여기4");
+                    // var jh = $(this).parent();
+                    // if ($(this).addClass('selected')){
+                    //     console.log("여기5");
+                    //     jh.children(li).hasClass('selected').removeClass('selected')
+                    // }
+                }
+            });
+
+            $("[data-left]").click(function () {
+                console.log("여기1");
+                console.log(this);
+                // for (i=1; i<) {
+                    if ($(this).hasClass('selected')) {
+                        console.log("여기2");
+                        $(this).removeClass('selected') // 있으면 지우고
+                    } else {
+                        console.log("여기3");
+                        $(this).addClass('selected'); // 없으면 추가하고
+                    }
+                // }
+            });
+            
+            
+
+        });
     </script>
 </head>
 
-<body style="">
+<body>
     <a name="t"></a>
     <div id="wrap" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
         <!-- 컨텐츠 -->
@@ -84,40 +107,40 @@ $(function(){
 
                                                 <div class="group adult" id="nop_group_adult" style="display: block;">
                                                     <span class="title">일반</span>
-                                                    <ul class="kh">
-                                                        <li data-count="0" class="num0" type="adult"><a href="#"
+                                                    <ul>
+                                                        <li data-count="0" class="selected" type="adult"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>0<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="1" type="adult" class="num1"><a href="#"
+                                                        <li data-count="1" type="adult" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>1<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="2" type="adult" class="num2 selected"><a href="#"
+                                                        <li data-count="2" type="adult" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>2<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="3" type="adult" class="num3"><a href="#"
+                                                        <li data-count="3" type="adult" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>3<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="4" type="adult" class="num4"><a href="#"
+                                                        <li data-count="4" type="adult" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>4<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="5" type="adult" class="num5"><a href="#"
+                                                        <li data-count="5" type="adult" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>5<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="6" type="adult" class="num6"><a href="#"
+                                                        <li data-count="6" type="adult" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>6<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="7" type="adult" class="num7"><a href="#"
+                                                        <li data-count="7" type="adult" class="dimmed"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>7<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="8" type="adult" class="num8"><a href="#"
+                                                        <li data-count="8" type="adult" class="dimmed"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>8<span
                                                                     class="sreader">명</span></a></li>
@@ -785,13 +808,13 @@ $(function(){
                                                             class="skip_row">G열 건너뛰기</a>
                                                         <div class="seat_group">
                                                             <div class="group">
-                                                                <div class="seat selected sgi1" style="left: 48px;"
+                                                                <div class="seat" style="left: 48px;"
                                                                     data-left="48" data-left_zoom="72"><a
                                                                         href="#" "="" onclick=" return false;"><span
                                                                             class="no">3</span><span
                                                                             class="sreader"></span><span
                                                                             class="sreader mod"> 선택됨</span></a></div>
-                                                                <div class="seat selected sgi1" style="left: 64px;"
+                                                                <div class="seat" style="left: 64px;"
                                                                     data-left="64" data-left_zoom="96"><a
                                                                         href="#" "="" onclick=" return false;"><span
                                                                             class="no">4</span><span
