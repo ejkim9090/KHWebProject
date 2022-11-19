@@ -12,11 +12,13 @@
     <script src="./js/jquery-3.6.1.js"></script>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css' />
     <script src='//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js'></script>
-
+    <!-- <link rel='stylesheet' href='./css/ti1-2.css'> -->
 </head>
+
 <body>
     <div id="ticket">
-        <button type="button" class="btn_chart" onclick="location.href='//www.cgv.co.kr/reserve/show-times/?'";></button>
+        <button type="button" class="btn_chart" onclick="location.href='//www.cgv.co.kr/reserve/show-times/?'"
+            ;></button>
         <button type="button" class="btn_restart" onClick="window.location.reload()"></button>
     </div>
     <div class="reserve-container">
@@ -52,18 +54,53 @@
                                     $("#movie-name").empty();
                                     //  $("#movie-name").append(d);
                                     for (let i in movieList) {
-                                        $("#movie-name").append("<br><div class='movie' id=" + movieList[i].movieCd + ">" + movieList[i].movieNm + "</div><hr>");
+                                        $("#movie-name").append("<div class='movie' id=" + movieList[i].movieCd + ">" + movieList[i].movieNm + "</div>");
                                         console.log(movieList[i].movieCd);
                                     }
+                                    addEventForAddedNode("#movie-name > .movie", movieClickHandler, "click");
+                                    // addEventForChangeColor("#movie-name > .movie", nameClickHandler, "change");
                                 });
                             });//button click
-                            //영화 제목 클릭시
+
+                            // 영화 제목 클릭시
                             // $("#movie-name").on("click",".movie", function(){
-                            //     let d = $(this);
-                            //     let movieCd = d.attr("id");
-                            //     let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd="+movieCd;
+                            //     $(this).css('background-color', '#333333');
+                            //     $(this).css('color', 'white');
+                            //     // let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd="+movieCd;
                             // });
                         });
+
+                        //             function addEventForChangeColor(nodeSelector, afunction, typeOfEvent) {
+                        //                 $(nodeSelector).on(typeOfEvent, afunction);
+                        //             }
+
+                        //              movieName.addEventListener('click', function () {
+
+                        // });
+
+                        function addEventForAddedNode(nodeSelector, cbfunction, typeOfEvent) {
+                            $(nodeSelector).on(typeOfEvent, cbfunction);
+                        }
+                        function movieClickHandler() {
+                            console.log("영화클릭!!!!");
+                            console.log(this);
+                            console.log("영화id: " + $(this).prop("id"));
+                            console.log("영화제목: " + $(this).html());
+                        };
+
+                        // movieName.forEach(list => {
+                        //     list.addEventListener('click', function () {
+                        //         const movieNameActive = document.querySelectorAll('.movie-active');
+                        //         movieNameActive.forEach(li => {
+                        //             li.classList.remove('movie-active');
+                        //         });
+                        //         list.classList.add('movie-active');
+                        //         console.log(list.innerHTML);
+                        //         inputRunningTime.value = list.innerHTML;
+                        //     });
+                        // });
+
+
                     </script>
                     </head>
 
@@ -184,14 +221,14 @@
             const reserveDate = document.querySelector('.reserve-date');
             const theaterPlace = document.querySelectorAll('.theater-place');
             const reserveTimeWant = document.querySelectorAll('.reserve-time-want');
-            const inputTitle = document.querySelector('.title');
+            const inputTitle = document.querySelector('.movie');
             const inputSelectedTheater = document.querySelector('.selectedTheater');
             const inputReserveDate = document.querySelector('.reserveDate');
             const inputRunningTime = document.querySelector('.runningTime');
             const moveSeatForm = document.querySelector('.moveSeatForm');
             const moveSeatButton = document.querySelector('.moveSeatButton');
             const movieAge = document.querySelector('.movieAge');
-            const movieName = document.querySelector('.movie-name');
+            // const movieName = document.querySelector('.movie');
 
             let movieListAge = '';
             let year = 0;
@@ -264,13 +301,13 @@
                 }, ' ');
             }
 
-//             function getMovieList(item) {
-//                 console.log(item);
-//                 return `<div class="movie-list">
-//     <div class="movie-list-age">${item.movieAge}</div>
-//     <button class="movie-list-title">${item.movieTitle}</button>
-// </div>`;
-//             }
+            //             function getMovieList(item) {
+            //                 console.log(item);
+            //                 return `<div class="movie-list">
+            //     <div class="movie-list-age">${item.movieAge}</div>
+            //     <button class="movie-list-title">${item.movieTitle}</button>
+            // </div>`;
+            //             }
 
             function addDate() {
                 const weekOfDay = ['일', '월', '화', '수', '목', '금', '토'];
@@ -362,7 +399,7 @@
             });
 
             moveSeatButton.addEventListener('click', function () {
-                if ( //!!inputTitle.value &&
+                if ($(".movie") &&
                     !!inputSelectedTheater.value &&
                     !!inputReserveDate.value &&
                     !!inputRunningTime.value
@@ -374,12 +411,20 @@
                         progressBar: true,
                         timeOut: 1000,
                     };
-
+                    toastr.error(
+                        '<div style="color:white">모든 항목을 체크해 주세요</div>',
+                        '<div style="color:white">경고</div>'
+                        , {
+                            timeOut: 3000,
+                        }
+                    );
                 }
             });
-
-            movieName.addEventListener('click', function () {
-
+            
+            // 영화 제목 클릭시
+            $("#movie-name").on("click", ".movie", function () {
+                $(this).css('background-color', '#333333');
+                $(this).css('color', 'white');
             });
 
 
