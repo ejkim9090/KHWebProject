@@ -6,6 +6,41 @@ body {
     background-color: #FDFCF0;
 }
 
+/* ticket button */
+#ticket .btn_chart {
+    background-position: 0 -90px;
+    position: relative;
+    display: block;
+    top: 160px;
+    left: 965px;
+    margin-right: 5px;
+    width: 101px;
+    height: 30px;
+    overflow: hidden;
+    background-image: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/top_buttons.png);
+    background-repeat: no-repeat;
+    background-position: 0% 37.5%;
+}
+
+#ticket .btn_restart {
+    background-position: 0 -90px;
+    width: 113px;
+    height: 30px;
+    top: 130px;
+    left: 1070px;
+    position: relative;
+    display: block;
+    /* float: right; */
+    margin-left: 5px;
+    overflow: hidden;
+    background-image: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/top_buttons.png);
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+}
+
+#ticket {
+    position: relative;
+}
 
 /* header */
 
@@ -274,6 +309,7 @@ body {
     font-weight: bold;
     text-align: left;
 }
+
 .movie-list {
     font-size: 13px;
     font-weight: bold;
@@ -341,23 +377,26 @@ body {
     border-radius: 100%;
     /* background-color: #AF2D2D; */
 }
-.moveSeatButton{
-	
-	font-size: 18px;
-	font-weight: bold;
-	padding: 5px;
-	margin-top: 20px;
-	margin-left: 80px;
-	border: 1px solid #333333;
+
+.moveSeatButton {
+
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: 80px;
+    border: 1px solid #333333;
 }
-.moveSeatButton:hover{
-	 background-color: #333333;
-	 color: white;
+
+.moveSeatButton:hover {
+    background-color: #333333;
+    color: white;
 }
+
 .fifteen {
     color: white;
     background-color: #AF2D2D;
-    
+
 }
 
 .eighteen {
