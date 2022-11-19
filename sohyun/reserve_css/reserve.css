@@ -5,6 +5,15 @@
 body {
     background-color: #FDFCF0;
 }
+#movie-name .movie {
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 3px;
+    cursor: pointer;
+}
+#movie-name .movie-active{
+    background-color: black;
+}
 
 /* ticket button */
 #ticket .btn_chart {
