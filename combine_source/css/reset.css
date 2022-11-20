@@ -110,3 +110,8 @@ a:hover {
 a:active {
   background-color: transparent;
 }
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

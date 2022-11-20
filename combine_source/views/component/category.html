@@ -85,7 +85,7 @@
         position: absolute;
         width: 100%;
         height: 2px;
-        top: 68px;
+        top: 55px;
         color: #fb4357;
         border-bottom: #fb4357 solid 2px;
         z-index: 1;
@@ -94,6 +94,8 @@
         display: inline-flex;
         z-index: 10;
         background: none;
+        height: 50px;
+        align-items: center;
       }
       .unover-menu > li {
         padding: 20px 15px;
@@ -166,10 +168,11 @@
 
       .totalSearch_wrap {
         position: absolute;
-        top: 25px;
+        top: 12px;
         right: 0;
         display: inline-flex;
         padding: 0 36px 0 10px;
+        border: 1px black solid;
       }
       .totalSearch_wrap:before {
         content: "";
@@ -273,10 +276,20 @@
               </ul>
               <ul class="nav_overMenu">
                 <li>
-                  <h2><a href="#" tabindex="-1">예매</a></h2>
+                  <h2>
+                    <a
+                      href="../../views/ticket_display/ticket_main.html"
+                      tabindex="-1"
+                      >예매</a
+                    >
+                  </h2>
                 </li>
                 <li>
-                  <h3><a href="#">빠른예매</a></h3>
+                  <h3>
+                    <a href="../../views/ticket_display/ticket_main.html"
+                      >빠른예매</a
+                    >
+                  </h3>
                 </li>
                 <li>
                   <h3><a href="#">상영스케줄</a></h3>
