@@ -40,21 +40,13 @@
                 var jh = $(this);
                 var j1 = ($(jh).parents('.row').text()).slice(58,59);
                 var j2 = $(jh).text();
-                var j3 = jh.hasClass('reserved')
 
                 if (!(jh.hasClass('selected'))) {
-                    jh.addClass('selected'); // 없으면 추가하고
+                    jh.addClass('selected');
                     $('#ticket_tnb .seat_no .ellipsis-line3').text(j1+j2); 
                 } else {
-                    jh.removeClass('selected') // 있으면 지우고
+                    jh.removeClass('selected');
                 }
-                console.log('여기1');
-                
-                if (jh == j3) {
-                    consloe.log("여기2");
-                }
-
-
             });
 
         });
@@ -810,21 +802,18 @@
                                                                         href="#" "="" onclick=" return false;"><span
                                                                             class="no">3</span><span
                                                                             class="sreader"></span><span
-                                                                            class="sreader mod"> 선택됨</span></a></div>
+                                                                            class="sreader mod"></span></a></div>
                                                                 <div class="seat" style="left: 64px;"
                                                                     data-left="64" data-left_zoom="96"><a
                                                                         href="#" "="" onclick=" return false;"><span
                                                                             class="no">4</span><span
                                                                             class="sreader"></span><span
-                                                                            class="sreader mod"> 선택됨</span></a></div>
+                                                                            class="sreader mod"></span></a></div>
                                                                 <div class="seat" style="left: 80px;" data-left="80"
-                                                                    data-left_zoom="120">
-                                                                    <a href="#" onclick="return false;">
-                                                                        <span class="no">5</span>
-                                                                        <span class="sreader"></span>
-                                                                        <span class="sreader mod"></span>
-                                                                    </a>
-                                                                </div>
+                                                                    data-left_zoom="120"><a href="#" "="" onclick="
+                                                                    return false;"><span class="no">5</span><span
+                                                                        class="sreader"></span><span
+                                                                        class="sreader mod"></span></a></div>
                                                                 <div class="seat" style="left: 96px;" data-left="96"
                                                                     data-left_zoom="144"><a href="#" "="" onclick="
                                                                         return false;"><span class="no">6</span><span
