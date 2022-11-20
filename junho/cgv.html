@@ -26,39 +26,35 @@
     <script>
         $(function(){
             
-            $("[data-count]").click(function () {
-                console.log("여기1");
-                console.log(this);
-                if ($(this).hasClass('selected')) {
-                    console.log("여기2");
-                    $(this).removeClass('selected') // 있으면 지우고
-                } else {
-                    console.log("여기3");
-                    $(this).addClass('selected'); // 없으면 추가하고
-                    // console.log("여기4");
-                    // var jh = $(this).parent();
-                    // if ($(this).addClass('selected')){
-                    //     console.log("여기5");
-                    //     jh.children(li).hasClass('selected').removeClass('selected')
-                    // }
+            $('[data-count]').click(function () {
+                var jh = $(this);
+                
+                jh.parent().find('li').removeClass('selected');
+                jh.addClass('selected');
+                
+                if(jh.addClass('selected')) {
+                    jh.parent().find('li').removeClass('dimmed');
                 }
-            });
 
-            $("[data-left]").click(function () {
-                console.log("여기1");
-                console.log(this);
-                // for (i=1; i<) {
-                    if ($(this).hasClass('selected')) {
-                        console.log("여기2");
-                        $(this).removeClass('selected') // 있으면 지우고
-                    } else {
-                        console.log("여기3");
-                        $(this).addClass('selected'); // 없으면 추가하고
-                    }
-                // }
+                $('#ticket_tnb .number .data').text($(jh).text());
+                
             });
             
-            
+            $("[data-left]").click(function () {
+                var jh = $(this);
+                var j1 = ($(jh).parents('.row').text()).slice(58,59);
+                var j2 = $(jh).text();
+
+                if (!(jh.hasClass('selected'))) {
+                    jh.addClass('selected'); // 없으면 추가하고
+
+                    $('#ticket_tnb .seat_no .ellipsis-line3').text(j1+j2);
+                    
+                } else {
+                    jh.removeClass('selected') // 있으면 지우고
+                }
+
+            });
 
         });
     </script>
@@ -107,7 +103,7 @@
 
                                                 <div class="group adult" id="nop_group_adult" style="display: block;">
                                                     <span class="title">일반</span>
-                                                    <ul>
+                                                    <ul class="kh">
                                                         <li data-count="0" class="selected" type="adult"><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>0<span
@@ -1366,229 +1362,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="minimap opened" id="minimap" style="display: none;">
-                                        <div class="mini_header"
-                                            onclick="ftSeatMinimapToggle();event.preventDefault();">Minimap<span></span>
-                                        </div>
-                                        <div class="mini_container" style="width: 98px; height: 96px;">
-                                            <div class="mini_screen">SCREEN</div>
-                                            <div class="mini_seats">
-                                                <div class="mini_seat" style="left:0px;top:0px;"><span></span></div>
-                                                <div class="mini_seat" style="left:4px;top:0px;"><span></span></div>
-                                                <div class="mini_seat" style="left:8px;top:0px;"><span></span></div>
-                                                <div class="mini_seat" style="left:12px;top:0px;"><span></span></div>
-                                                <div class="mini_seat" style="left:16px;top:0px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:0px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:0px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:0px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:0px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:0px;"><span></span></div>
-                                                <div class="mini_seat handicap" style="left:48px;top:0px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat handicap" style="left:52px;top:0px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat" style="left:0px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:4px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:8px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:12px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:16px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:52px;top:4px;"><span></span></div>
-                                                <div class="mini_seat" style="left:0px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:4px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:8px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:12px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:16px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:8px;"><span></span></div>
-                                                <div class="mini_seat" style="left:52px;top:8px;"><span></span></div>
-                                                <div class="mini_seat reserved" style="left:0px;top:12px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat reserved" style="left:4px;top:12px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat reserved" style="left:8px;top:12px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat reserved" style="left:12px;top:12px;">
-                                                    <span></span>
-                                                </div>
-                                                <div class="mini_seat reserved" style="left:16px;top:12px;">
-                                                    <span></span>
-                                                </div>
-                                                <div class="mini_seat reserved" style="left:20px;top:12px;">
-                                                    <span></span>
-                                                </div>
-                                                <div class="mini_seat" style="left:24px;top:12px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:12px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:12px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:12px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:12px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:12px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:12px;"><span></span></div>
-                                                <div class="mini_seat" style="left:52px;top:12px;"><span></span></div>
-                                                <div class="mini_seat" style="left:0px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:4px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:8px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:12px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:16px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:52px;top:16px;"><span></span></div>
-                                                <div class="mini_seat" style="left:0px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:4px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:8px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:12px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:16px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:52px;top:20px;"><span></span></div>
-                                                <div class="mini_seat" style="left:8px;top:24px;"><span></span></div>
-                                                <div class="mini_seat" style="left:12px;top:24px;"><span></span></div>
-                                                <div class="mini_seat" style="left:16px;top:24px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:24px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:24px;"><span></span></div>
-                                                <div class="mini_seat reserved" style="left:28px;top:24px;">
-                                                    <span></span>
-                                                </div>
-                                                <div class="mini_seat" style="left:32px;top:24px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:24px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:24px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:24px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:24px;"><span></span></div>
-                                                <div class="mini_seat reserved" style="left:52px;top:24px;">
-                                                    <span></span>
-                                                </div>
-                                                <div class="mini_seat" style="left:8px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:12px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:16px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:28px;"><span></span></div>
-                                                <div class="mini_seat" style="left:52px;top:28px;"><span></span></div>
-                                                <div class="mini_seat reserved" style="left:8px;top:32px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat reserved" style="left:12px;top:32px;">
-                                                    <span></span>
-                                                </div>
-                                                <div class="mini_seat" style="left:16px;top:32px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:32px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:32px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:32px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:32px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:32px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:32px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:32px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:32px;"><span></span></div>
-                                                <div class="mini_seat" style="left:52px;top:32px;"><span></span></div>
-                                                <div class="mini_seat" style="left:8px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:12px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:16px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:52px;top:36px;"><span></span></div>
-                                                <div class="mini_seat" style="left:8px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:12px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:16px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:40px;"><span></span></div>
-                                                <div class="mini_seat" style="left:52px;top:40px;"><span></span></div>
-                                                <div class="mini_seat sweet" style="left:60px;top:40px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:64px;top:40px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat" style="left:8px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:12px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:16px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:20px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:24px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:28px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:32px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:36px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:40px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:44px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:48px;top:44px;"><span></span></div>
-                                                <div class="mini_seat" style="left:52px;top:44px;"><span></span></div>
-                                                <div class="mini_seat sweet" style="left:60px;top:44px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:64px;top:44px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:8px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:12px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:16px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:20px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:24px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:28px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:32px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:36px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:40px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:44px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:48px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:52px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:60px;top:48px;"><span></span>
-                                                </div>
-                                                <div class="mini_seat sweet" style="left:64px;top:48px;"><span></span>
-                                                </div>
-                                            </div>
-                                            <div class="mini_exits">
-                                                <div class="mini_exit tr"></div>
-                                            </div>
-                                        </div>
-                                        <div class="mini_region"
-                                            style="height: 96px; width: 98px; top: 25px; left: 5px;"><span></span></div>
-                                    </div>
+                                    
                                     <div class="legend" style="width: 125px;">
                                         <div class="buttons">
                                             <a class="btn-zoom" id="seat_zoom_btn" href="#"
@@ -1658,26 +1432,26 @@
                     </div>
                     <div class="row number" style="display: block;">
                         <span class="header">인원</span>
-                        <span class="data" title="일반 2명">일반 2명</span>
+                        <span class="data" title=""></span>
                     </div>
                     <div class="placeholder" title="극장선택" style="display: none;"></div>
                 </div>
                 <div class="info seat">
                     <div class="row seat_name" style="height: 20px;">
                         <span class="header">좌석명</span>
-                        <span class="data" title="일반석">일반석</span>
+                        <span class="data" title="일반석"></span>
                     </div>
                     <div class="row seat_no colspan3">
                         <span class="header">좌석번호</span>
-                        <span class="data ellipsis-line3" title="G3,G4">G3,G4</span>
+                        <span class="data ellipsis-line3" title="G3,G4"></span>
                     </div>
                     <div class="placeholder" title="좌석선택" style="display: none;"></div>
                 </div>
                 <div class="info payment-ticket" style="width: 155px;">
-                    <div class="row payment-adult" style="display: block;">
+                    <div class="row payment-adult" style="display: none;">
                         <span class="header">일반</span>
-                        <span class="data"><span class="price">14,000</span><span class="exe"> 원 X </span><span
-                                class="quantity">2</span></span>
+                        <span class="data"><span class="price">0</span><span class="exe"> 원 X </span><span
+                                class="quantity">0</span></span>
                     </div>
                     <div class="row payment-youth" style="display: none;">
                         <span class="header">청소년</span>
@@ -1695,7 +1469,7 @@
                         <span class="data"><span class="price">0</span><span class="exe"> 원 X </span><span
                                 class="quantity">0</span></span>
                     </div>
-                    <div class="row payment-final" style="display: block;">
+                    <div class="row payment-final" style="display: none;">
                         <span class="header">총금액</span>
                         <span class="data"><span class="price">28,000</span><span class="won">원</span></span>
                         <span id="priceMapInfoIco"
