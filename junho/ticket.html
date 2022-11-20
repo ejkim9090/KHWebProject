@@ -32,10 +32,6 @@
                 jh.parent().find('li').removeClass('selected');
                 jh.addClass('selected');
                 
-                if(jh.addClass('selected')) {
-                    jh.parent().find('li').removeClass('dimmed');
-                }
-
                 $('#ticket_tnb .number .data').text($(jh).text());
                 
             });
@@ -44,15 +40,20 @@
                 var jh = $(this);
                 var j1 = ($(jh).parents('.row').text()).slice(58,59);
                 var j2 = $(jh).text();
+                var j3 = jh.hasClass('reserved')
 
                 if (!(jh.hasClass('selected'))) {
                     jh.addClass('selected'); // 없으면 추가하고
-
-                    $('#ticket_tnb .seat_no .ellipsis-line3').text(j1+j2);
-                    
+                    $('#ticket_tnb .seat_no .ellipsis-line3').text(j1+j2); 
                 } else {
                     jh.removeClass('selected') // 있으면 지우고
                 }
+                console.log('여기1');
+                
+                if (jh == j3) {
+                    consloe.log("여기2");
+                }
+
 
             });
 
@@ -132,11 +133,11 @@
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>6<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="7" type="adult" class="dimmed"><a href="#"
+                                                        <li data-count="7" type="adult" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>7<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="8" type="adult" class="dimmed"><a href="#"
+                                                        <li data-count="8" type="adult" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">일반</span>8<span
                                                                     class="sreader">명</span></a></li>
@@ -174,11 +175,11 @@
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">청소년</span>6<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="7" type="youth" class="dimmed"><a href="#"
+                                                        <li data-count="7" type="youth" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">청소년</span>7<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="8" type="youth" class="dimmed"><a href="#"
+                                                        <li data-count="8" type="youth" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">청소년</span>8<span
                                                                     class="sreader">명</span></a></li>
@@ -216,11 +217,11 @@
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">경로</span>6<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="7" type="senior" class="dimmed"><a href="#"
+                                                        <li data-count="7" type="senior" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">경로</span>7<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="8" type="senior" class="dimmed"><a href="#"
+                                                        <li data-count="8" type="senior" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">경로</span>8<span
                                                                     class="sreader">명</span></a></li>
@@ -259,11 +260,11 @@
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">우대</span>6<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="7" type="special" class="dimmed"><a href="#"
+                                                        <li data-count="7" type="special" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">우대</span>7<span
                                                                     class="sreader">명</span></a></li>
-                                                        <li data-count="8" type="special" class="dimmed"><a href="#"
+                                                        <li data-count="8" type="special" class=""><a href="#"
                                                                 onclick="return false;"><span
                                                                     class="sreader mod">우대</span>8<span
                                                                     class="sreader">명</span></a></li>
