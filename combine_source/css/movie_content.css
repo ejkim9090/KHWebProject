@@ -1,0 +1,387 @@
+ol,
+ul {
+  list-style: none;
+}
+
+div {
+  font-family: "Noto Sans KR", "CJONLYONENEW", "맑은 고딕", "돋움", Dotum,
+    sans-serif;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  word-break: break-all;
+}
+
+.trailer_wrap {
+  width: 980px;
+  margin: 0 auto;
+}
+#Content_Section_Trailer {
+  width: 820px;
+  height: 300.98px;
+}
+
+#Content_Section_Still_Cut {
+  width: 800px;
+  height: 549px;
+}
+
+/* 회색 헤딩 메뉴 */
+.heading {
+  position: relative;
+  width: 100%;
+  height: 39px;
+  background: #f6f6f6;
+}
+
+.heading h4 {
+  float: left;
+  margin: 0px 16px;
+  line-height: 39px;
+  color: #333333;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.heading .count {
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+/* 트레일러 */
+.sect-trailer ul {
+  margin-left: -10px;
+  padding: 10px;
+}
+
+.sect-trailer li {
+  width: 260px;
+  margin: 0 0 15px 10px;
+  list-style: none;
+  float: left;
+}
+
+.sect-trailer li .thumb-image img {
+  width: 260px;
+  height: 142px;
+}
+
+#first_img {
+  padding-left: -10px;
+}
+
+.sect-trailer .title {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.sect-trailer .txt-info {
+  margin-top: 3px;
+  color: #666666;
+}
+
+/* 스틸컷 */
+
+.movie_player_popup {
+  text-decoration: none;
+}
+
+.link-more {
+  display: inline-block;
+  width: 20px;
+  height: 19px;
+  background: url(https://img.cgv.co.kr/R2014/images/sprite/sprite_btn.png) -50px -62px
+    no-repeat;
+  vertical-align: middle;
+  font: 0/0 a;
+  zoom: 1;
+}
+
+.ico-trailer.hd {
+  border-color: #2a6fb6;
+  color: #2a6fb6;
+}
+
+.ico-trailer {
+  display: inline-block;
+  height: 13px;
+  margin-right: 5px;
+  padding: 0 3px;
+  border: 1px solid #c62424;
+  font-size: 10px;
+  font-family: Dotum, "돋움";
+  text-align: center;
+  font-weight: bold;
+  line-height: 13px;
+}
+
+.ico-play1 {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  right: 80%;
+  bottom: 68%;
+  background: url(https://img.cgv.co.kr/R2014/images/sprite/sprite_icon.png) -60px -21px
+    no-repeat;
+  font: 0/0 a;
+  zoom: 1;
+}
+.ico-play2 {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  right: 60%;
+  bottom: 68%;
+  background: url(https://img.cgv.co.kr/R2014/images/sprite/sprite_icon.png) -60px -21px
+    no-repeat;
+  font: 0/0 a;
+  zoom: 1;
+}
+.ico-play3 {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  right: 40%;
+  bottom: 68%;
+  background: url(https://img.cgv.co.kr/R2014/images/sprite/sprite_icon.png) -60px -21px
+    no-repeat;
+  font: 0/0 a;
+  zoom: 1;
+}
+
+.layer-wrap .popwrap {
+  position: relative;
+  padding: 5px;
+  background-color: #333333;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.title {
+  display: block;
+  color: #333333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.txt-info {
+  display: block;
+  color: #999999;
+  font-size: 12px;
+}
+
+.controller button {
+  position: absolute;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px 20px;
+  top: 50%;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+/* 스틸컷 */
+li {
+  list-style-type: none;
+}
+
+#slideShow {
+  width: 316px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  margin: 5px auto;
+}
+
+.slides img {
+  width: 316px;
+  height: 450px;
+}
+
+.slides {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 316px;
+  height: 450px;
+  /* 슬라이드할 사진과 마진 총 넓이 */
+}
+
+/* 첫 번째 슬라이드 가운데에 정렬하기위해
+첫번째 슬라이드만 margin-left조정 */
+.slides li:first-child {
+  margin-left: -41px;
+  float: left;
+}
+
+.slides li:not(:last-child) {
+  float: left;
+  margin-right: 1px;
+}
+
+.slides li {
+  float: left;
+}
+
+.controller span {
+  position: absolute;
+  background-color: transparent;
+  color: #333333;
+  text-align: center;
+  padding: 0px 15px;
+  top: 40%;
+  font-size: 3.5em;
+  cursor: pointer;
+}
+
+.controller .prev {
+  left: 5%;
+  top: 80%;
+}
+
+.controller .next {
+  right: 45%;
+  top: 80%;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+/* 리뷰 */
+#a_container .row {
+  width: 800px;
+  margin: 0 auto;
+}
+#a_container .row > hr {
+  width: 800px;
+  border: black solid 2px;
+}
+#a_container .row .fl-box {
+  display: flex;
+  margin-left: 20px;
+}
+#a_container .row .fl-box > h1 {
+  margin: 40px 0 40px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+#a_container .row .fl-box > hr {
+  margin: 40px 0 40px 0;
+}
+#a_container .row .empty-box {
+  flex: 1;
+  /* 위의 옵션을 사용해서  가운데에 빈공간 만든다.*/
+}
+#a_container .row .fl-box .egg-box {
+  display: flex;
+  margin: auto 20px auto 20px;
+}
+#a_container .row .fl-box .egg-box img {
+  width: 70px;
+}
+#a_container .row .egg-box .block-egg-box {
+  margin: auto 0px auto 10px;
+  text-align: center;
+}
+#a_container .row .egg-box .block-egg-box > h2 {
+  font-size: large;
+  color: orangered;
+}
+#a_container .row .egg-box .block-egg-box > h3 {
+  font-size: xx-large;
+}
+#a_container .row .ch-fl-box {
+  display: flex;
+}
+#a_container .row .ch-box-wrap:first-child {
+  width: 400px;
+  height: 320px;
+  margin: auto;
+  border: #bbbbbb solid 2px;
+  padding: 30px 50px 30px 50px;
+}
+#a_container .row .ch-box-wrap:last-child {
+  width: 400px;
+  height: 320px;
+  margin: auto;
+  border-right: #bbbbbb solid 2px;
+  border-top: #bbbbbb solid 2px;
+  border-bottom: #bbbbbb solid 2px;
+  padding: 30px 50px 30px 50px;
+}
+#a_container .row .ch-box {
+  width: 300px;
+  height: 200px;
+  margin: auto;
+}
+#a_container .row .ch-fl-box h1 {
+  display: flex;
+  font-size: 20px;
+}
+#a_container .row .announce-box-wrap {
+  margin: 20px 0 20px 0;
+  background-color: #f6f6f6;
+}
+#a_container .row .announce-box-wrap .announce-box {
+  display: flex;
+  height: 110px;
+  align-items: center;
+  padding-left: 50px;
+}
+#a_container .row .announce-box-wrap .announce-box .text-box {
+  margin: auto 0 auto 0;
+}
+#a_container .row .announce-box-wrap .announce-box .text-box > h1 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+#a_container .row .announce-box-wrap .announce-box .text-box > h2 {
+  font-size: 13px;
+  font-weight: normal;
+}
+#a_container .row .announce-box-wrap .announce-box .button-box {
+  margin: 40px;
+}
+#a_container .row .announce-box-wrap .announce-box .button-box > .red-white {
+  background-color: #fb4357;
+  border: red solid 1px;
+  color: white;
+  width: 75px;
+  height: 50px;
+  border-radius: 5px;
+}
+#a_container .row .announce-box-wrap .announce-box .button-box > .gray-white {
+  background-color: #646464;
+  border: #646464 solid 1px;
+  color: white;
+  width: 75px;
+  height: 50px;
+  border-radius: 5px;
+}
+#a_container .row .audience-review-wrap .sort-review {
+  display: flex;
+}
+#a_container .row .audience-review-wrap .sort-review > hr {
+  margin: 0 10px 0 10px;
+  color: #646464;
+}
+#a_container .row .audience-review-wrap .sort-review > a {
+  font-size: 13px;
+  font-weight: 500;
+}
