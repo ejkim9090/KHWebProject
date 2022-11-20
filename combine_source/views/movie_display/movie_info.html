@@ -18,6 +18,20 @@
     <script src="../../script/includeHTML.js"></script>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+    <script>
+      $(function () {
+        $(".num_select")
+          .find("a")
+          .click(function () {
+            var kk = $(this).text();
+            $(this).siblings(".selected").removeClass("selected");
+            $(this).addClass("selected");
+            $(".review_box")
+              .find("span, p:first-child")
+              .text(kk + "번째 페이지");
+          });
+      });
+    </script>
   </head>
   <body>
     <div id="component">
@@ -560,16 +574,16 @@
               </ul>
             </ul>
             <div class="num_select">
-              <a href="#1">1</a>
-              <a href="#2">2</a>
-              <a href="#3">3</a>
-              <a href="#4">4</a>
-              <a href="#5">5</a>
-              <a href="#6">6</a>
-              <a href="#7">7</a>
-              <a href="#8">8</a>
-              <a href="#9">9</a>
-              <a href="#10">10</a>
+              <a href="#1" class="numb selected">1</a>
+              <a href="#2" class="numb">2</a>
+              <a href="#3" class="numb">3</a>
+              <a href="#4" class="numb">4</a>
+              <a href="#5" class="numb">5</a>
+              <a href="#6" class="numb">6</a>
+              <a href="#7" class="numb">7</a>
+              <a href="#8" class="numb">8</a>
+              <a href="#9" class="numb">9</a>
+              <a href="#10" class="numb">10</a>
               <a href="#next" id="next">
                 <button>다음 10개 ></button>
               </a>

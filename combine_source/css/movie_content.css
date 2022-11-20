@@ -1165,6 +1165,11 @@ li {
 #a_container .num_select > a {
   margin-left: 15px;
 }
+#a_container .num_select .selected {
+  font-weight: 900;
+  font-size: 17px;
+  color: red;
+}
 #a_container .num_select > a#next > button {
   margin-left: 10px;
   width: 90px;
@@ -1174,7 +1179,7 @@ li {
   color: black;
   font-size: 14px;
 }
-#a_container .num_select > a#next2 > button:last-child {
+#a_container .num_select > a#next2 > button {
   width: 30px;
   height: 30px;
   background-color: white;
