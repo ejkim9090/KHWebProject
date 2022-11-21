@@ -24,6 +24,12 @@
     <!-- <link rel='stylesheet' href='./css/ti1-2.css'> -->
     <script>
       $(function () {
+        var url = "popup.html";
+        var title = "마스크 착용";
+        var setting = "width=450px, height=450px";
+        window.open(url, title, setting);
+      });
+      $(function () {
         let y = new Date();
         y.setDate(y.getDate() - 1);
         let str =
@@ -245,7 +251,11 @@
               />
               <input type="hidden" class="reserveDate" name="movieDate" />
               <input type="hidden" class="runningTime" name="runningTime" />
-              <button href="#" class="moveSeatButton" type="button">
+              <button
+                href="ticket_select.html"
+                class="moveSeatButton"
+                type="button"
+              >
                 예약하기
               </button>
             </form>
@@ -486,7 +496,7 @@
           !!inputReserveDate.value &&
           !!inputRunningTime.value
         ) {
-          moveSeatButton.onclick = window.location = "결제창";
+          moveSeatButton.onclick = window.location = "ticket_select.html";
         } else {
           toastr.options = {
             positionClass: "toast-top-full-width",
